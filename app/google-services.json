@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "580470785423",
+    "project_id": "malganga-dairy",
+    "storage_bucket": "malganga-dairy.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580470785423:android:294132fc4a06cf5249f7fa",
+        "android_client_info": {
+          "package_name": "com.tejas.adminmalgangadairy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580470785423-ptp0uphsmd752mbg504bv612ceqf1d6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrjVksXFRn9fjyDWtXBHkOnegUPVIXkQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580470785423-ptp0uphsmd752mbg504bv612ceqf1d6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:580470785423:android:31dcfca21b8c81ab49f7fa",
+        "android_client_info": {
+          "package_name": "com.tejas.malgangadairy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "580470785423-ptp0uphsmd752mbg504bv612ceqf1d6a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDrjVksXFRn9fjyDWtXBHkOnegUPVIXkQ8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "580470785423-ptp0uphsmd752mbg504bv612ceqf1d6a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
