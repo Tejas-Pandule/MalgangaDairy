@@ -12,7 +12,7 @@
         android:layout_width="90dp"
         android:layout_height="90dp"
         app:cardCornerRadius="8dp"
-        android:backgroundTint="#DDE3FF"
+        android:backgroundTint="#F0F8FF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="MissingConstraints">

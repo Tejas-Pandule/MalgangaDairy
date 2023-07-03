@@ -2,6 +2,8 @@ package com.tejas.malgangadairy.Activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.TextView
+import androidx.core.view.isVisible
 import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -33,6 +35,17 @@ class CategoryActivity : AppCompatActivity() {
 
                 val recyclerView = findViewById<RecyclerView>(R.id.categoryProductRecyclerView)
                 recyclerView.adapter = CategoryProductAdaptor(this,list)
+
+                if (list.isEmpty()){
+                    val msg = findViewById<TextView>(R.id.txtMsg)
+                    msg.isVisible = true
+
+                }
+
             }
+
+
+
+
     }
 }

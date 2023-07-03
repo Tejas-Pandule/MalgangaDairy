@@ -18,8 +18,8 @@ data class ProductModel(
     @ColumnInfo(name = "productImage")
     val productImage: String? = "",
 
-    @ColumnInfo(name = "Quantity")
-    val productQuantity:String?="",
+    @ColumnInfo(name = "quantity")
+    val quantity:String?="",
 
 
 

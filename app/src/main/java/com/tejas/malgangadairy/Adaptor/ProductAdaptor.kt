@@ -32,12 +32,18 @@ class ProductAdaptor (val context : Context,val list : ArrayList<Add_Product_Mod
         Glide.with(context).load(data.productCoverImg).into(holder.binding.imageView)
         holder.binding.textView6.text = data.productName
         holder.binding.textView8.text = data.productCategory
-        holder.binding.textView9.text = "₹"+data.productMrp
-        holder.binding.button3.text = "₹"+ data.productSp
+//        holder.binding.textView9.text = "₹"+data.productMrp
+        holder.binding.button3.text = "₹"+ data.productSp+" Only"
 
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ProductDetailActivity::class.java)
+            intent.putExtra("id",list[position].productId)
+            context.startActivity(intent)
+        }
+
+        holder.binding.button4.setOnClickListener {
+            val intent =Intent(context,ProductDetailActivity::class.java)
             intent.putExtra("id",list[position].productId)
             context.startActivity(intent)
         }

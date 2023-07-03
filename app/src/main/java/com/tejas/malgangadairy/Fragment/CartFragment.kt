@@ -59,12 +59,12 @@ class CartFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun totalCost(data: List<ProductModel>?) {
-        var total = 0
+        var total = 0.0
         for (item in data!!){
-            total += item.productSp!!.toInt()
+            total += item.productSp!!.toFloat()*item.quantity!!.toFloat()
         }
 
-        binding.textView.text = "Total item in cart is ${data.size}"
+        binding.textView.text = "Total items in cart: ${data.size}"
         binding.textView1.text = "Total Cost: ₹${total}"
 
 

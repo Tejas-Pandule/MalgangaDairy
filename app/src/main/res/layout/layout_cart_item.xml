@@ -7,7 +7,7 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="7dp"
     android:elevation="8dp"
-    android:backgroundTint="#DDE3FF">
+    android:backgroundTint="#F0F8FF">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -53,11 +53,11 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="20dp"
+            android:layout_width="25dp"
             android:layout_height="20dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:layout_margin="7dp"
+            android:layout_margin="10dp"
             app:srcCompat="@drawable/delete" />
 
 

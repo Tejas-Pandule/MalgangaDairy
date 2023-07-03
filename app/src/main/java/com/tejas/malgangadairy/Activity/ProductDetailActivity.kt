@@ -4,7 +4,9 @@ import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.denzcoskun.imageslider.constants.ScaleTypes
 import com.denzcoskun.imageslider.models.SlideModel
@@ -27,8 +29,11 @@ class ProductDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
-
         getProductDetail(intent.getStringExtra("id"))
+
+
+
+
 
 
 
@@ -44,6 +49,14 @@ class ProductDetailActivity : AppCompatActivity() {
                 val name = it.getString("productName")
                 val productSp= it.getString("productSp")
                 val productDescription= it.getString("productDescription")
+
+
+                if (name=="Cow Milk"||name=="Buffalo Milk"){
+                    binding.imageView6.isVisible = true
+                    binding.textView13.isVisible = true
+
+                }
+                binding.proQuantity.hint = "Enter amount of $name"
 
                 binding.textView3.text = name
                 binding.textView4.text = "₹$productSp"
@@ -74,7 +87,18 @@ class ProductDetailActivity : AppCompatActivity() {
 
         if (productDao.isExit(proId) != null){
             binding.textView7.text = "Go to Cart"
+            binding.proQuantity.isEnabled = false
+
+            binding.textInputLayout2.setOnClickListener {
+                Toast.makeText(
+                    this,
+                    "Please check previous order, Open cart..!",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+
         }else{
+
             binding.textView7.text = "Add To Cart"
         }
 
@@ -83,6 +107,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
             if (productDao.isExit(proId) != null){
                 openCart()
+
 
             }else{
                 AddToCart(productDao,proId,name,productSp,coverImg)
@@ -100,12 +125,16 @@ class ProductDetailActivity : AppCompatActivity() {
         productSp: String?,
         coverImg: String?,
 
+
     ){
 
-        val data = ProductModel(proId,name,productSp,coverImg)
+
+        val data = ProductModel(proId,name,productSp,coverImg,binding.proQuantity.text.toString())
         lifecycleScope.launch(Dispatchers.IO){
             productDao.insertProduct(data)
             binding.textView7.text = "Go to Cart"
+            binding.proQuantity.text =null
+
 
         }
     }

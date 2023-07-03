@@ -22,6 +22,7 @@ import org.json.JSONObject
 
 
 class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
+    private lateinit var price: String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
@@ -30,7 +31,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
         val checkout = Checkout()
         checkout.setKeyID("rzp_test_9LULgOYfnMW9ar")
 
-        val price  = intent.getStringExtra("totalCost")
+         price  = intent.getStringExtra("totalCost").toString()
 
         try {
             val options = JSONObject()
@@ -39,7 +40,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
             options.put("image", "https://s3.amazonaws.com/rzp-mobile/images/rzp.jpg")
             options.put("theme.color", "#1A033B")
             options.put("currency", "INR")
-            options.put("amount", (price!!.toInt()*100))//pass amount in currency subunits
+            options.put("amount", (price!!.toFloat()*100))//pass amount in currency subunits
             options.put("prefill.email", "tejaspandule9036@gmail.com")
             options.put("prefill.contact", "7796709036")
             checkout.open(this, options)
@@ -74,11 +75,8 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
                 }
 
 
-
-
-
                 saveData(it.getString("productName"),
-                    it.getString("productSp"),
+                    price,
                     it.getString("productCoverImg"),
                     productId
                 )

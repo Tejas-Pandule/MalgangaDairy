@@ -39,7 +39,12 @@ class CartAdaptor (val context : Context, val list: List<ProductModel>): Recycle
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         Glide.with(context).load(list[position].productImage).into(holder.binding.imageView3)
         holder.binding.textView10.text = list[position].productName
-        holder.binding.textView11.text ="₹ "+list[position].productSp
+
+        val quantity = list[position].quantity!!.toFloat()
+        val quantitySp = list[position].productSp!!.toFloat()
+
+        val finalquantity = quantity*quantitySp
+        holder.binding.textView11.text ="₹"+finalquantity.toString()
 
         // opening product detail Activity
         holder.itemView.setOnClickListener {
