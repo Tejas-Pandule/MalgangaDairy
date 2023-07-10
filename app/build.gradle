@@ -79,7 +79,13 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.1")
 
+    //Razorpay
     implementation 'com.razorpay:checkout:1.6.26'
+
+    //Circular ImageView
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
+
+
 
 
 

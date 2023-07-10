@@ -8,7 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AppCompatActivity
+import com.google.firebase.auth.FirebaseAuth
 import com.tejas.malgangadairy.Activity.AddressActivity
+import com.tejas.malgangadairy.Activity.RegisterActivity
 import com.tejas.malgangadairy.Adaptor.CartAdaptor
 import com.tejas.malgangadairy.MainActivity
 import com.tejas.malgangadairy.R
@@ -20,7 +22,7 @@ import com.tejas.malgangadairy.roomdb.ProductModel
 class CartFragment : Fragment() {
     private lateinit var binding:FragmentCartBinding
     private lateinit var list:ArrayList<String>
-
+    private var quantity:Float = 0.0f
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -59,9 +61,10 @@ class CartFragment : Fragment() {
 
     @SuppressLint("SetTextI18n")
     private fun totalCost(data: List<ProductModel>?) {
-        var total = 0.0
+        var total = 0.0f
         for (item in data!!){
-            total += item.productSp!!.toFloat()*item.quantity!!.toFloat()
+            quantity = item.quantity!!.toFloat()
+            total += item.productSp!!.toFloat()*quantity
         }
 
         binding.textView.text = "Total items in cart: ${data.size}"
@@ -69,11 +72,14 @@ class CartFragment : Fragment() {
 
 
         binding.btnCheckout.setOnClickListener {
+
+
             val intent = Intent(context, AddressActivity::class.java)
 
             val b = Bundle()
             b.putStringArrayList("productIds",list)
             b.putString("totalCost",total.toString())
+            b.putString("quantity",quantity.toString())
             intent.putExtras(b)
             startActivity(intent)
         }

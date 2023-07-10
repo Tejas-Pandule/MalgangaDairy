@@ -1,60 +1,101 @@
 package com.tejas.malgangadairy.Fragment
 
+
+
+import android.content.Context.MODE_PRIVATE
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AlertDialog
+import androidx.lifecycle.lifecycleScope
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import com.tejas.malgangadairy.Activity.HelpCenterActivity
+import com.tejas.malgangadairy.Activity.LoginActivity
+import com.tejas.malgangadairy.Activity.MyOrdersActivity
+import com.tejas.malgangadairy.Activity.NotificationActivity
 import com.tejas.malgangadairy.R
+import com.tejas.malgangadairy.databinding.FragmentMoreBinding
+import com.tejas.malgangadairy.roomdb.AppDatabase
+import com.tejas.malgangadairy.roomdb.ProductModel
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [MoreFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class MoreFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private  lateinit var binding:FragmentMoreBinding
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_more, container, false)
+        binding = FragmentMoreBinding.inflate(layoutInflater)
+
+        val auth = FirebaseAuth.getInstance()
+
+
+        val preferences = requireActivity().getSharedPreferences("user",MODE_PRIVATE)
+
+
+      //Loading User's Name from Firebase
+       Firebase.firestore.collection("users")
+           .document(preferences.getString("number","0123456789")!!)
+           .get().addOnSuccessListener {
+               binding.txtUserName.text = it.getString("userName")
+           }
+           .addOnFailureListener {
+
+           }
+
+
+        //Log Out Button
+        val builder = AlertDialog.Builder(requireContext())
+
+        builder.setTitle("Log Out")
+        builder.setMessage("Are you sure, You want to Logout?")
+        builder.setIcon(R.drawable.logout)
+        builder.create()
+        builder.setPositiveButton("Yes"){ builder, _ ->
+            auth.signOut()
+            startActivity(Intent(requireContext(),LoginActivity::class.java))
+        }
+        builder.setNegativeButton("No"){ builder, _ ->
+            builder.dismiss()
+        }
+
+        binding.button5.setOnClickListener {
+            builder.show()
+
+        }
+
+        binding.materialCardView2.setOnClickListener {
+            val intent = Intent(requireContext(),MyOrdersActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.materialCardView3.setOnClickListener {
+            val intent = Intent(requireContext(),NotificationActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.materialCardView4.setOnClickListener {
+            val intent = Intent(requireContext(),HelpCenterActivity::class.java)
+            startActivity(intent)
+        }
+
+
+
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment MoreFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            MoreFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
-    }
+
+
+
+
 }

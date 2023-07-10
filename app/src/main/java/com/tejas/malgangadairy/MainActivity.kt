@@ -6,9 +6,11 @@ import android.os.Bundle
 import android.widget.PopupMenu
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.findNavController
 import com.google.firebase.auth.FirebaseAuth
 import com.tejas.malgangadairy.Activity.LoginActivity
+import com.tejas.malgangadairy.Activity.RegisterActivity
 import com.tejas.malgangadairy.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -22,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (FirebaseAuth.getInstance().currentUser==null){
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this,RegisterActivity::class.java))
             finish()
         }
 
@@ -73,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         if (i==0){
             finish()
         }
+
 
     }
 

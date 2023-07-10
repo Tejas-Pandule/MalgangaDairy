@@ -12,6 +12,7 @@ import com.google.firebase.ktx.Firebase
 import com.razorpay.Checkout
 import com.razorpay.PaymentResultListener
 import com.tejas.malgangadairy.Fragment.CartFragment
+import com.tejas.malgangadairy.Fragment.MoreFragment
 import com.tejas.malgangadairy.MainActivity
 import com.tejas.malgangadairy.R
 import com.tejas.malgangadairy.roomdb.AppDatabase
@@ -23,6 +24,7 @@ import org.json.JSONObject
 
 class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
     private lateinit var price: String
+    private lateinit var quantity:String
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_checkout)
@@ -32,7 +34,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
         checkout.setKeyID("rzp_test_9LULgOYfnMW9ar")
 
          price  = intent.getStringExtra("totalCost").toString()
-
+         quantity = intent.getStringExtra("quantity").toString()
         try {
             val options = JSONObject()
             options.put("name", "Malganga Dairy")
@@ -61,6 +63,8 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
         for(currentId in id!!){
             fetchData(currentId)
         }
+
+
     }
 
     private fun fetchData(productId: String?) {
@@ -75,8 +79,11 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
                 }
 
 
+
+
                 saveData(it.getString("productName"),
                     price,
+                    quantity,
                     it.getString("productCoverImg"),
                     productId
                 )
@@ -87,7 +94,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
             }
     }
 
-    private fun saveData(name: String?, price: String?,coverImg:String?, productId: String) {
+    private fun saveData(name: String?, price: String?,quantity:String?,coverImg:String?, productId: String) {
 
         val preferences = this.getSharedPreferences("user", MODE_PRIVATE)
         val userAddress = this.getSharedPreferences("address", MODE_PRIVATE)
@@ -95,6 +102,7 @@ class CheckoutActivity : AppCompatActivity(), PaymentResultListener {
         val data = hashMapOf<String,Any>()
         data["name"] =name!!
         data["price"]= price!!
+        data["quantity"] =quantity!!
         data["coverImg"]= coverImg!!
         data["productId"] =productId
         data["userId"]=preferences.getString("number","7796709036")!!

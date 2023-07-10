@@ -111,7 +111,7 @@ class ProductDetailActivity : AppCompatActivity() {
 
             }else{
                 AddToCart(productDao,proId,name,productSp,coverImg)
-                Toast.makeText(this, "Item Added In Cart..!", Toast.LENGTH_SHORT).show()
+
             }
 
         }
@@ -128,15 +128,22 @@ class ProductDetailActivity : AppCompatActivity() {
 
     ){
 
+        if (binding.proQuantity.text.toString().isEmpty()){
+            Toast.makeText(this, "Please Enter Quantity", Toast.LENGTH_SHORT).show()
+        }else{
 
-        val data = ProductModel(proId,name,productSp,coverImg,binding.proQuantity.text.toString())
-        lifecycleScope.launch(Dispatchers.IO){
-            productDao.insertProduct(data)
-            binding.textView7.text = "Go to Cart"
-            binding.proQuantity.text =null
+            val data = ProductModel(proId,name,productSp,coverImg,binding.proQuantity.text.toString())
+            lifecycleScope.launch(Dispatchers.IO){
+                productDao.insertProduct(data)
+                binding.textView7.text = "Go to Cart"
+                binding.proQuantity.text =null
 
+            }
+            Toast.makeText(this, "Item Added In Cart..!", Toast.LENGTH_SHORT).show()
 
         }
+
+
     }
 
     private fun openCart() {

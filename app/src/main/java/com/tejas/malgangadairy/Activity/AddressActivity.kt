@@ -13,6 +13,7 @@ class AddressActivity : AppCompatActivity() {
     private lateinit var binding:ActivityAddressBinding
     private lateinit var preferences:SharedPreferences
     private lateinit var totalCost:String
+    private lateinit var quantity:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class AddressActivity : AppCompatActivity() {
         preferences = this.getSharedPreferences("user", MODE_PRIVATE)
 
         totalCost = intent.getStringExtra("totalCost")!!
+        quantity = intent.getStringExtra("quantity")!!
 
         loadUserInfo()
 
@@ -75,6 +77,7 @@ class AddressActivity : AppCompatActivity() {
                 val b = Bundle()
                 b.putStringArrayList("productIds",intent.getStringArrayListExtra("productIds"))
                 b.putString("totalCost",totalCost)
+                b.putString("quantity",quantity)
 
                 val intent = Intent(this, CheckoutActivity::class.java)
                 intent.putExtras(b)

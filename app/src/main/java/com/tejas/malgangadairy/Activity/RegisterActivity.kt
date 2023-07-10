@@ -20,6 +20,7 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+
         binding.button2.setOnClickListener {
           openLogin()      //only intent passing
         }
@@ -54,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
         editor.putString("name",binding.userName.text.toString())
         editor.apply()
 
-
+        // adding name and number in firebase
         val data = UserModel(binding.userName.text.toString(),binding.userNumber.text.toString())
 
         Firebase.firestore.collection("users").document(binding.userNumber.text.toString())
