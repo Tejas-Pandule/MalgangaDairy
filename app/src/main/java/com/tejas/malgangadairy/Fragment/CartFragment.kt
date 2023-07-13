@@ -82,6 +82,7 @@ class CartFragment : Fragment() {
             b.putString("quantity",quantity.toString())
             intent.putExtras(b)
             startActivity(intent)
+
         }
 
 

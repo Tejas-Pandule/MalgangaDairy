@@ -82,6 +82,7 @@ class AddressActivity : AppCompatActivity() {
                 val intent = Intent(this, CheckoutActivity::class.java)
                 intent.putExtras(b)
                 startActivity(intent)
+                finish()
             }
             .addOnFailureListener {
                 Toast.makeText(this, "Something went wrong", Toast.LENGTH_SHORT).show()

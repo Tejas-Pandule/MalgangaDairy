@@ -65,6 +65,7 @@ class AllOrderAdaptor(val list: ArrayList<AllOrderModel>,val context:Context): R
                     holder.binding.ProStatus.text = "Canceled"
                     holder.binding.ProStatus.setTextColor(Color.parseColor("#FF0000"))
                     holder.binding.textView24.setTextColor(Color.parseColor("#808080"))
+                    Toast.makeText(context, "Your Order Canceled", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -94,7 +95,7 @@ class AllOrderAdaptor(val list: ArrayList<AllOrderModel>,val context:Context): R
         Firebase.firestore.collection("allOrders")
             .document(doc).update(data)
             .addOnSuccessListener {
-                Toast.makeText(context, "Status updated", Toast.LENGTH_SHORT).show()
+
             }
             .addOnFailureListener {
                 Toast.makeText(context, "Something went wrong", Toast.LENGTH_SHORT).show()

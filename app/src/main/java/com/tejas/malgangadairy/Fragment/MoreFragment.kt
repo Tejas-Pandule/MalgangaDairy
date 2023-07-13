@@ -18,6 +18,7 @@ import com.tejas.malgangadairy.Activity.HelpCenterActivity
 import com.tejas.malgangadairy.Activity.LoginActivity
 import com.tejas.malgangadairy.Activity.MyOrdersActivity
 import com.tejas.malgangadairy.Activity.NotificationActivity
+import com.tejas.malgangadairy.MainActivity
 import com.tejas.malgangadairy.R
 import com.tejas.malgangadairy.databinding.FragmentMoreBinding
 import com.tejas.malgangadairy.roomdb.AppDatabase
@@ -28,6 +29,7 @@ import kotlinx.coroutines.launch
 
 class MoreFragment : Fragment() {
     private  lateinit var binding:FragmentMoreBinding
+
 
 
     override fun onCreateView(
@@ -63,6 +65,9 @@ class MoreFragment : Fragment() {
         builder.setPositiveButton("Yes"){ builder, _ ->
             auth.signOut()
             startActivity(Intent(requireContext(),LoginActivity::class.java))
+            requireActivity().finish()
+
+
         }
         builder.setNegativeButton("No"){ builder, _ ->
             builder.dismiss()

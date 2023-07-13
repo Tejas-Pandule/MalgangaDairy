@@ -35,6 +35,7 @@ class LoginActivity : AppCompatActivity() {
 
             else{
                 sendOTP(binding.userNumber.text.toString())
+
             }
         }
     }
@@ -45,8 +46,8 @@ class LoginActivity : AppCompatActivity() {
     private fun sendOTP(number: String) {
 
         builder = AlertDialog.Builder(this)
-            .setTitle("Loading...!")
-            .setMessage("Please Wait")
+            .setTitle("OTP Verification")
+            .setMessage("OTP is sent to Your Mobile Number.!")
             .setCancelable(false)
             .create()
         builder.show()
@@ -81,6 +82,7 @@ class LoginActivity : AppCompatActivity() {
             intent.putExtra("verificationId",verificationId)
             intent.putExtra("number",binding.userNumber.text.toString())
             startActivity(intent)
+            finish()
         }
     }
 }

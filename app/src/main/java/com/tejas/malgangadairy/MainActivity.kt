@@ -24,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         if (FirebaseAuth.getInstance().currentUser==null){
-            startActivity(Intent(this,RegisterActivity::class.java))
+            startActivity(Intent(this,LoginActivity::class.java))
             finish()
         }
 

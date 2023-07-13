@@ -13,6 +13,8 @@ import com.tejas.malgangadairy.databinding.ActivityMyOrdersBinding
 class MyOrdersActivity : AppCompatActivity() {
     private lateinit var binding :ActivityMyOrdersBinding
     private lateinit var list:ArrayList<AllOrderModel>
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMyOrdersBinding.inflate(layoutInflater)

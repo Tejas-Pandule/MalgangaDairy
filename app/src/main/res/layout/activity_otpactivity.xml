@@ -32,7 +32,8 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="OTP"
+            android:hint="Enter OTP"
+            android:inputType="number"
             android:id="@+id/userOtp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
