@@ -31,10 +31,10 @@ The Milk Delivery App is a mobile application that allows users to subscribe to 
 <img src = "https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/c01157e4-da43-44d1-b57a-8a395357cf51.jpg" width = "250">
 <img src = "https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/280f4eaa-2581-44b5-b56c-abb90baa6045.jpg" width = "250">
 
-<img src = "![Profile Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/072baea2-d954-4417-b664-8fe28db17804.jpg" width = "250">
+<img src = "https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/072baea2-d954-4417-b664-8fe28db17804.jpg" width = "250">
 
-<img src = "![Razorpay Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/5e712ccd-e92f-43a6-b293-6f106745815e.jpg " width = "250">
-<img src = "![Orders Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/a01dbbbc-cf09-4d74-a424-16dddc96eac7.jpg " width = "250">
+<img src = "https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/5e712ccd-e92f-43a6-b293-6f106745815e.jpg " width = "250">
+<img src = "https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/a01dbbbc-cf09-4d74-a424-16dddc96eac7.jpg " width = "250">
 
 
 
