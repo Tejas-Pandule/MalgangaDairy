@@ -26,8 +26,7 @@ The Milk Delivery App is a mobile application that allows users to subscribe to 
 
 # Screenshot of Application
 
-<img src ="![Splash Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/3f6054c6-400e-4c70-af2c-3051c8be4596)
-" width ="200">
+<img src ="https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/3f6054c6-400e-4c70-af2c-3051c8be4596.jpg" width ="200">
 
 
 # Authors
