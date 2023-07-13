@@ -1,4 +1,4 @@
-# Milk Delivery App
+# Malganga Dairy-Milk Delivery App
 This repository contains the source code and documentation for a milk delivery app developed using Kotlin & XML.
 # Description
 The Milk Delivery App is a mobile application that allows users to subscribe to milk delivery services and have fresh milk delivered to their doorstep on a regular basis. It provides a seamless user experience, flexible subscription options, and convenient management of delivery schedules.
