@@ -3,7 +3,7 @@ This repository contains the source code and documentation for a milk delivery a
 # Description
 The Milk Delivery App is a mobile application that allows users to subscribe to milk delivery services and have fresh milk delivered to their doorstep on a regular basis. It provides a seamless user experience, flexible subscription options, and convenient management of delivery schedules.
 # Features 
-####User registration and authentication
+#### User registration and authentication
 -Browse and select milk products
 -Subscription management with customizable delivery schedules
 -Real-time tracking of milk delivery
