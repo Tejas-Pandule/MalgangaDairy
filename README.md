@@ -14,15 +14,15 @@ The Milk Delivery App is a mobile application that allows users to subscribe to 
 -Admin Application 
 
 # Technologies Used
-## Android Studio
-## Firebase (Firebase Authentication, Firebase Cloud Storage)
-## Kotlin
-## XML
-## Room Database
-## Razorpay
-## Glide Library   
-## Slider  [(https://github.com/denzcoskun/ImageSlideshow)] 
-## Smooth Navigation [(https://github.com/ibrahimsn98/SmoothBottomBar)]
+### Android Studio
+### Firebase (Firebase Authentication, Firebase Cloud Storage)
+### Kotlin
+### XML
+### Room Database
+### Razorpay
+### Glide Library   
+### Slider
+### Smooth Navigation 
 
 # Screenshot of Application
 
