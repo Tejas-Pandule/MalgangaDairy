@@ -15,7 +15,7 @@ The Milk Delivery App is a mobile application that allows users to subscribe to 
 
 # Technologies Used
 ## Android Studio
-## Firebase (Firebase Authentication, Firbase Cloud Storage)
+## Firebase (Firebase Authentication, Firebase Cloud Storage)
 ## Kotlin
 ## XML
 ## Room Database
@@ -26,7 +26,7 @@ The Milk Delivery App is a mobile application that allows users to subscribe to 
 
 # Screenshot of Application
 
-![Splash Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/8e10c382-7ff6-4470-adfc-45e3de923cfd) 
+![Splash Screen][width = 20](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/8e10c382-7ff6-4470-adfc-45e3de923cfd) 
 ![Home Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/c3f5de9b-2286-4563-8bc1-f1c1b597fa9c)
 ![Product Detail Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/c664389b-948c-4484-871c-02a8aa4acb7c)
 ![Profile Screen](https://github.com/Tejas-Pandule/MalgangaDairy/assets/104879082/c4f60cde-2cba-407e-89b6-3ca1f25922d6)
