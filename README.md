@@ -40,7 +40,7 @@ The Milk Delivery App is a mobile application that allows users to subscribe to 
 
 
 # Authors
-# Tejas Pandule 
+Tejas Pandule 
 
 
 
